@@ -23,12 +23,12 @@ export default function CategoryIndex() {
   };
 
   return (
-    <section className="relative w-full py-32 px-8 bg-gradient-to-b from-[#EAECEE] via-[#5E646A] to-[#08080A] text-text-primary min-h-screen flex items-center">
+    <section className="relative w-full py-32 px-8 bg-[#EAECEE] text-[#1A1D20] min-h-screen flex items-center">
       {/* Corner Tags */}
-      <div className="absolute top-8 left-8 text-xs font-mono tracking-widest text-text-secondary">CONTENT</div>
-      <div className="absolute top-8 right-8 text-xs font-mono tracking-widest text-text-secondary">AI</div>
-      <div className="absolute bottom-8 left-8 text-xs font-mono tracking-widest text-text-secondary">FIGMA</div>
-      <div className="absolute bottom-8 right-8 text-xs font-mono tracking-widest text-text-secondary">CHERNIKOV32DESIGN</div>
+      <div className="absolute top-8 left-8 text-xs font-mono tracking-widest text-[#8C9298]">CONTENT</div>
+      <div className="absolute top-8 right-8 text-xs font-mono tracking-widest text-[#8C9298]">AI</div>
+      <div className="absolute bottom-8 left-8 text-xs font-mono tracking-widest text-[#8C9298]">FIGMA</div>
+      <div className="absolute bottom-8 right-8 text-xs font-mono tracking-widest text-[#8C9298]">CHERNIKOV32DESIGN</div>
 
       <div className="max-w-7xl mx-auto w-full flex flex-col gap-6">
         {categories.map((cat, idx) => {
@@ -47,7 +47,7 @@ export default function CategoryIndex() {
               }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             >
-              <h3 className={`font-display text-6xl font-bold tracking-tighter transition-all duration-500 uppercase ${isHovered ? 'text-[#EAECEE] scale-105 translate-x-4' : 'text-[#8C9298]'}`}>
+              <h3 className={`font-display text-6xl font-bold tracking-tighter transition-all duration-500 uppercase ${isHovered ? 'text-[#1A1D20] scale-105 translate-x-4' : 'text-[#8C9298]'}`}>
                 {cat.title}
               </h3>
 
@@ -56,7 +56,7 @@ export default function CategoryIndex() {
                 animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -20 }}
                 className="text-accent"
               >
-                <ArrowUpRight size={48} strokeWidth={1.5} />
+                <ArrowUpRight size={48} strokeWidth={1.5} color="#1A1D20" />
               </motion.div>
             </motion.div>
           );

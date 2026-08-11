@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/app/globals.css
 @import "tailwindcss";
 
 @theme {
@@ -68,8 +69,4 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
-@keyframes shimmer {
-  100% {
-    transform: translateX(100%);
-  }
-}
+INNER_EOF

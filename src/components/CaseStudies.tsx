@@ -6,172 +6,255 @@ import { useEffect, useState, useRef } from "react";
 export default function CaseStudies() {
   return (
     <div className="w-full bg-[#08080A] text-text-primary">
-      {/* Case 1: SMM & BRAND IDENTITY */}
-            <section id="smm-brand" className="py-32 px-8">
+            {/* Case 01: EIDOS MASSAGE STUDIO */}
+      <section id="smm-brand" className="py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-sm font-mono tracking-widest text-text-secondary mb-12">CASE 01 // EIDOS MASSAGE STUDIO</h2>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div className="mb-16">
+            <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-4">01 / SMM & BRAND IDENTITY</h2>
+            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4">
+              EIDOS MASSAGE STUDIO
+            </h3>
+            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/70 max-w-3xl">От комнаты к своему пространству</p>
+          </div>
 
-            {/* Collage Grid */}
-            <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-4 mb-8">
-               <div className="col-span-1 md:col-span-8 aspect-[16/9] bg-surface-secondary/20 rounded-lg overflow-hidden relative group hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out cursor-pointer">
-                  <div className="absolute inset-0 flex items-center justify-center font-display text-text-secondary mix-blend-overlay">HERO IMAGE</div>
-               </div>
-               <div className="col-span-1 md:col-span-4 aspect-square bg-surface-secondary/20 rounded-lg overflow-hidden relative group hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out cursor-pointer">
-                  <div className="absolute inset-0 flex items-center justify-center font-display text-text-secondary mix-blend-overlay">DETAIL 1</div>
-               </div>
-               <div className="col-span-1 md:col-span-4 aspect-[3/4] bg-surface-secondary/20 rounded-lg overflow-hidden relative group hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out cursor-pointer">
-                  <div className="absolute inset-0 flex items-center justify-center font-display text-text-secondary mix-blend-overlay">DETAIL 2</div>
-               </div>
-               <div className="col-span-1 md:col-span-8 aspect-[21/9] bg-surface-secondary/20 rounded-lg overflow-hidden relative group hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out cursor-pointer">
-                  <div className="absolute inset-0 flex items-center justify-center font-display text-text-secondary mix-blend-overlay">LANDSCAPE</div>
-               </div>
+          <div className="flex flex-col gap-16">
+            {/* Top Row (3 Cards) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden relative shadow-lg">
+                <div className="absolute inset-0 flex items-center justify-center font-display text-[#8C9298]">PHOTO 1</div>
+              </div>
+              <div className="bg-liquid-glass rounded-xl p-8 flex flex-col justify-center shadow-lg">
+                <p className="text-lg md:text-xl font-sans text-[#1A1D20] text-left">
+                  При масштабировании бизнеса возникла необходимость сменить любительский визуал на премиальную, системную айдентику. Задача — отстроиться от конкурентов с банальными «массажными штампами» (свечи, лотосы, бежевые стоки).
+                </p>
+              </div>
+              <div className="aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden relative shadow-lg">
+                <div className="absolute inset-0 flex items-center justify-center font-display text-[#8C9298]">PHOTO 2</div>
+              </div>
             </div>
 
-            <div className="md:col-span-12 flex flex-col justify-center gap-8">
-              <h3 className="text-5xl font-display font-medium tracking-tighter leading-[0.9]">Magazine Collage Layout</h3>
-              <div className="grid grid-cols-2 gap-8 text-sm">
-                <div>
-                  <h4 className="text-text-secondary mb-2 font-mono">STRATEGY</h4>
-                  <p>Premium aesthetics combined with deep visual metaphor, transforming standard SMM into editorial art.</p>
-                </div>
-                <div>
-                  <h4 className="text-text-secondary mb-2 font-mono">IMPACT</h4>
-                  <p>+300% engagement rate across social channels within 2 weeks of launch.</p>
-                </div>
+            {/* Middle Text Blocks */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+              <div className="md:col-span-4 md:pl-4">
+                <h4 className="text-2xl md:text-4xl font-display font-light text-[#1A1D20] text-left">Стратегия и решение:</h4>
               </div>
+              <div className="md:col-span-6 md:col-start-6 md:pr-4">
+                <p className="text-lg font-sans text-[#1A1D20]/80 text-left">
+                  Построение единого визуального языка: от контента в соцсетях до печатных носителей. Чистая эстетика, типографика, фокус на профессиональной реабилитации.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+              <div className="md:col-span-4 md:pl-4">
+                <h4 className="text-2xl md:text-4xl font-display font-light text-[#1A1D20] text-left">Результат и бизнес-эффект:</h4>
+              </div>
+              <div className="md:col-span-6 md:col-start-6 md:pr-4">
+                <p className="text-lg font-sans text-[#1A1D20]/80 text-left">
+                  100% единый стиль во всех точках касания (SMM, печать, веб). Рост вовлеченности и формирование образа премиального пространства.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Collage (Masonry of 8 photos) */}
+            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 mt-8">
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className={`bg-[#D8DBDE] rounded-xl overflow-hidden break-inside-avoid shadow-sm hover:shadow-xl transition-shadow ${i % 3 === 0 ? 'aspect-video' : 'aspect-[3/4]'}`}>
+                   <div className="w-full h-full flex items-center justify-center font-display text-[#8C9298]">IMG {i+1}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Case 02: MAKE-UP ARTIST LEANCA */}
-      <section id="beauty-fx" className="py-32 px-8 bg-[#08080A] text-[#F4F4F6] border-t border-white/5">
+      <section id="beauty-fx" className="py-32 px-8 bg-gradient-to-b from-[#EAECEE] to-[#656A70] text-[#EAECEE]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-12">02 / MAKE-UP ARTIST LEANCA</h2>
-
           <div className="mb-16">
-            <h3 className="text-4xl md:text-6xl font-display font-medium tracking-tighter leading-[0.9] uppercase max-w-3xl">
-              УПАКОВКА ПОРТФОЛИО ДЛЯ BEAUTY & FX ИНДУСТРИИ
+            <h2 className="text-sm font-mono tracking-widest text-[#1A1D20]/70 mb-4">02 / SMM & BRAND IDENTITY</h2>
+            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#1A1D20]">
+              MAKE-UP ARTIST
             </h3>
+            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/80 max-w-3xl">УПАКОВКА ПОРТФОЛИО ДЛЯ BEAUTY & FX ИНДУСТРИИ</p>
           </div>
 
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-             {/* Masonry Items */}
+          <div className="w-full flex justify-center mb-16">
+            <p className="text-lg md:text-xl font-sans text-center max-w-4xl text-[#EAECEE] bg-[#1A1D20]/10 p-8 rounded-2xl backdrop-blur-sm">
+              В соцсетях такой сложный крафт нужно продавать через эмоции, детализацию и гордость за ручной труд. Ниже — работы по оформлению слайдов карусели для соцсетей гримера.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+             {/* 6 Vertical Images */}
              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className={`bg-surface-secondary/10 rounded-lg overflow-hidden break-inside-avoid group hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out cursor-pointer ${i % 2 === 0 ? 'aspect-[3/4]' : 'aspect-video'}`}>
-                   <div className="w-full h-full flex items-center justify-center font-display text-text-secondary/50">SLIDE {i}</div>
+                <div key={i} className="aspect-[3/4] bg-liquid-glass-dark rounded-xl overflow-hidden group hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 ease-out cursor-pointer relative shadow-lg">
+                   <div className="w-full h-full flex items-center justify-center font-display text-[#EAECEE]/50">SLIDE {i}</div>
                 </div>
              ))}
           </div>
         </div>
       </section>
 
-      {/* Case 2: NEURO-CINEMATIC */}
-            <section id="neuro" className="py-32 px-8 bg-surface">
+            {/* Case 03: NEURO-CINEMATIC & E-COMMERCE */}
+      <section id="neuro" className="py-32 px-8 bg-[#656A70] text-[#EAECEE]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-sm font-mono tracking-widest text-text-secondary mb-12">CASE 03 // NEURO-CINEMATIC</h2>
-          <div className="flex flex-col md:flex-row gap-4">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="flex-1 aspect-[21/9] bg-[#0a0a0c] rounded-lg border border-white/5 relative overflow-hidden group cursor-pointer hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out"
-              >
-                <div className="absolute top-4 right-4 bg-glass px-3 py-1 rounded text-[10px] font-mono tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                  PROMPT DETAILS
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-text-secondary/30">
-                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                    <line x1="7" y1="2" x2="7" y2="22"></line>
-                    <line x1="17" y1="2" x2="17" y2="22"></line>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <line x1="2" y1="7" x2="7" y2="7"></line>
-                    <line x1="2" y1="17" x2="7" y2="17"></line>
-                    <line x1="17" y1="17" x2="22" y2="17"></line>
-                    <line x1="17" y1="7" x2="22" y2="7"></line>
-                  </svg>
-                </div>
+          <div className="mb-16">
+            <h2 className="text-sm font-mono tracking-widest text-[#EAECEE]/70 mb-4">03 / NEURO-CINEMATIC E-COM & PRINT DESIGN</h2>
+            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#EAECEE]">
+              CINEMATIC PRODUCTION
+            </h3>
+            <p className="text-xl md:text-3xl font-display text-[#EAECEE]/80 max-w-3xl">без миллионных бюджетов на съемки</p>
+          </div>
+
+          <div className="w-full mb-16 relative perspective-1000">
+            {/* Hero Mockup */}
+            <div className="w-full flex justify-center items-center h-auto max-w-5xl mx-auto mb-16 gap-4">
+              <div className="phone-mockup w-48 shrink-0 bg-[#EAECEE]">
+                 <div className="phone-notch"><div className="phone-notch-inner"></div></div>
+                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#1A1D20]/50">PHONE</div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case 3: E-COMMERCE & PRINT */}
-            <section id="ecommerce" className="py-32 px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-sm font-mono tracking-widest text-text-secondary mb-12">CASE 04 // E-COMMERCE & PRINT</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2, 3, 4].map((idx) => (
-              <div key={idx} className="flex flex-col gap-4">
-                <div className="w-full aspect-[1082/722] bg-surface-secondary/10 rounded-lg flex items-center justify-center text-text-secondary/50 group cursor-pointer hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out">
-                    IMAGE {idx}
-                </div>
+              <div className="aspect-square w-24 shrink-0 bg-[#1A1D20] rounded-full flex items-center justify-center text-xs font-mono text-[#EAECEE]">
+                CHAIN
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case 05: POSTER DESIGN */}
-      <section id="posters" className="py-32 px-0 bg-surface">
-        <div className="max-w-full">
-          <h2 className="text-sm font-mono tracking-widest text-text-secondary mb-12 px-8 max-w-7xl mx-auto">CASE 05 // POSTER DESIGN</h2>
-          <div className="flex flex-col gap-16 w-full">
-            {[1, 2].map((idx) => (
-               <div key={idx} className="w-full overflow-hidden">
-                  <div className="w-full aspect-[1440/1075] bg-[#1A1D20] flex items-center justify-center text-text-secondary/50 group cursor-pointer hover:scale-[1.03] hover:shadow-2xl transition-all duration-700 ease-out">
-                     <span className="font-display text-4xl">POSTER FULL BLEED {idx}</span>
-                  </div>
-               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case 4: VIBE-CODING & FAST WEB */}
-            <section id="vibe" className="py-32 px-8 bg-gradient-to-b from-[#08080A] via-[#5E646A] to-[#EAECEE] text-[#1A1D20] overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16 items-center text-center">
-          <div>
-            <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-8">CASE 06 // EIDOS-STUDIO.RU</h2>
-            <h3 className="text-6xl font-display font-medium tracking-tighter leading-[0.9] mb-8">Vibe-Coding & Fast Web</h3>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <span className="px-4 py-2 border border-[#1A1D20]/20 rounded-full text-xs font-mono">7-DAY DELIVERY</span>
-              <span className="px-4 py-2 border border-[#1A1D20]/20 rounded-full text-xs font-mono">CLEAN CODE</span>
-              <span className="px-4 py-2 border border-[#1A1D20]/20 rounded-full text-xs font-mono">100/100 SPEED</span>
             </div>
+
+            <div className="flex justify-end w-full mb-24">
+              <p className="text-lg md:text-xl font-sans text-right max-w-3xl text-[#EAECEE] pr-4 md:pr-12">
+                Пока маркетплейсы и бренды соревнуются в кричащих цветах и визуальном шуме, я создаю сдержанные, глубокие цифровые среды для продуктов. С помощью сложного промпт-инжиниринга я генерирую фотореалистичные сцены (макро, студийный свет, природные локации), заменяя клиентам дорогостоящие предметные фотосессии.
+              </p>
+            </div>
+
+            {/* Mockup Trio */}
+            <div className="flex justify-center items-center gap-8 md:gap-16 mb-32 flex-wrap">
+               <div className="phone-mockup w-48 bg-[#1A1D20] transform -rotate-6">
+                 <div className="phone-notch"><div className="phone-notch-inner bg-[#F4F4F6]"></div></div>
+                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#EAECEE]/50">PHONE 1</div>
+               </div>
+               <div className="phone-mockup w-56 bg-[#EAECEE] z-10 scale-110 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
+                 <div className="phone-notch"><div className="phone-notch-inner"></div></div>
+                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#1A1D20]/50">PHONE 2</div>
+               </div>
+               <div className="phone-mockup w-48 bg-[#1A1D20] transform rotate-6">
+                 <div className="phone-notch"><div className="phone-notch-inner bg-[#F4F4F6]"></div></div>
+                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#EAECEE]/50">PHONE 3</div>
+               </div>
+            </div>
+
+            {/* E-Commerce Cases */}
+            <div className="w-full">
+              <h4 className="text-3xl font-display font-medium text-right mb-12 tracking-tighter">E-COMMERCE CASES</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[1, 2, 3, 4].map((idx) => (
+                  <div key={idx} className="flex flex-col gap-4">
+                    <div className="w-full aspect-[1082/717] bg-liquid-glass-dark rounded-xl flex items-center justify-center text-[#EAECEE]/50 group cursor-pointer hover:scale-[1.02] hover:shadow-2xl transition-all duration-700 ease-out">
+                        IMAGE {idx}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
-          <div className="w-full relative perspective-1000">
+        </div>
+      </section>
+
+      {/* Case 04: POSTER DESIGN */}
+      <section id="posters" className="py-0 px-0 bg-[#656A70]">
+        <div className="w-full flex flex-col relative">
+          <div className="w-full aspect-video bg-[#1A1D20] flex items-center justify-center text-text-secondary/50 relative overflow-hidden">
+             <div className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50 bg-[#111]"></div>
+             <div className="absolute top-16 md:top-32 left-8 md:left-24 z-10">
+                <h2 className="text-sm font-mono tracking-widest text-[#EAECEE]/70 mb-4">04 / NEURO-CINEMATIC E-COM & PRINT DESIGN</h2>
+                <h3 className="text-4xl md:text-8xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#EAECEE]">
+                  CINEMATIC PRODUCTION
+                </h3>
+                <p className="text-xl md:text-4xl font-display text-[#EAECEE]/80 max-w-3xl">POSTER DESIGN</p>
+             </div>
+             <span className="font-display text-2xl z-0 absolute bottom-8 right-8">POSTER FULL BLEED 1</span>
+          </div>
+          {[2, 3, 4].map((idx) => (
+             <div key={idx} className="w-full aspect-video bg-[#1A1D20] border-t border-[#333] flex items-center justify-center text-[#EAECEE]/30 relative">
+                 <span className="font-display text-2xl">POSTER FULL BLEED {idx}</span>
+             </div>
+          ))}
+        </div>
+      </section>
+
+            {/* Case 05: VIBE-CODING & FAST WEB */}
+      <section id="vibe" className="py-32 px-8 bg-gradient-to-b from-[#656A70] to-[#EAECEE] text-[#656A70] overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+          <div className="text-center">
+            <h2 className="text-sm font-mono tracking-widest text-[#1A1D20]/70 mb-4">05 / VIBE-CODING & RAPID WEB DEVELOPMENT</h2>
+            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#1A1D20]">
+              EIDOS-STUDIO.RU
+            </h3>
+            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/80">Запуск сайта под ключ за 7 дней</p>
+          </div>
+
+          <div className="w-full relative perspective-1000 flex flex-col items-center">
             <motion.div
               onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                e.currentTarget.style.transform = `rotateX(${-y / 20}deg) rotateY(${x / 20}deg)`;
+                e.currentTarget.style.transform = `rotateX(${-y / 40}deg) rotateY(${x / 40}deg)`;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = `rotateX(0deg) rotateY(0deg)`;
               }}
               style={{ transition: 'transform 0.1s ease-out' }}
-              className="w-full max-w-5xl mx-auto aspect-[16/10] bg-[#0A0A0C] rounded-t-3xl border-[8px] border-[#2A2D32] shadow-2xl overflow-hidden flex items-center justify-center text-white"
+              className="laptop-mockup w-full max-w-5xl mx-auto bg-[#1A1D20] flex items-center justify-center text-[#EAECEE]"
             >
-              Laptop Mockup
+              <div className="absolute inset-0 flex items-center justify-center font-display text-4xl text-[#EAECEE]/30">EIDOS-STUDIO.RU</div>
             </motion.div>
+
+            <p className="mt-12 text-xl font-sans text-center max-w-4xl text-[#1A1D20]">
+              Сочетание профессиональных знаний дизайн-систем, глубокого понимания ИИ инструментов (LLM промптинг) и базового программирования.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="aspect-[4/5] bg-liquid-glass rounded-xl overflow-hidden shadow-lg relative">
+                   <div className="absolute inset-0 flex items-center justify-center font-display text-[#8C9298]">PHOTO</div>
+                </div>
+                <div className="bg-liquid-glass rounded-xl p-8 shadow-lg flex flex-col justify-center gap-4 text-[#1A1D20]">
+                   <h4 className="text-2xl font-display font-medium mb-4">Как был реализован проект:</h4>
+                   <ul className="list-disc pl-5 space-y-2 font-sans text-lg">
+                      <li>Отказ от раздутых корпоративных процессов в пользу agility.</li>
+                      <li>Полное создание UI/UX с помощью ИИ и ручной доводки.</li>
+                      <li>Скорость и оптимизация: 100/100 в Lighthouse.</li>
+                   </ul>
+                </div>
+             </div>
+
+             <div className="bg-liquid-glass rounded-xl p-8 shadow-lg w-full text-[#1A1D20]">
+                <p className="text-xl font-sans font-medium text-center">
+                  Результат: Живой действующий сайт eidos-studio.ru, созданный одним человеком с сокращением Time-to-Market в 3 раза.
+                </p>
+             </div>
           </div>
         </div>
       </section>
 
-      {/* Case 5: AI ARCHITECTURE & AGENTS */}
-            <section id="ai" className="py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+      {/* Case 06: K.A.I. INTELLIGENCE (LIVE CHAT) */}
+      <section id="ai" className="py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1">
-            <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-12">CASE 07 // K.A.I. INTELLIGENCE</h2>
-            <h3 className="text-5xl font-display font-medium tracking-tighter leading-[0.9] mb-6">AI ARCHITECTURE & AGENTS</h3>
-            <p className="text-[#1A1D20]/70 max-w-md">Real-time intelligent chat agents integrated directly into the user experience, providing context-aware recommendations and dynamic conversational flows.</p>
+            <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-4">06 / AI SYSTEMS & CUSTOM AGENTS</h2>
+            <h3 className="text-5xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] mb-8">K.A.I. Intelligence</h3>
+
+            <div className="flex flex-col gap-6 text-[#1A1D20]/80 font-sans text-lg">
+               <p><strong>Проект:</strong> KAI Автономный ИИ ассистент студии «Эйдос».</p>
+               <p><strong>Стек:</strong> Llama 3.3 / Python / Google Apps Script / Web Integration</p>
+               <p><em>Кай находится в режиме тестирования.</em></p>
+               <p><strong>Бизнес-задача:</strong> Снизить нагрузку на администраторов и увеличить конверсию из посетителя сайта в запись на услугу.</p>
+               <p><strong>Решение:</strong> Разработка ИИ-агента, который знает всё об услугах, мастерах и ценах, может проконсультировать по симптомам (в рамках компетенций массажной студии) и предложить оптимальный вариант.</p>
+            </div>
           </div>
 
-          <div className="relative w-[320px] shrink-0">
+          <div className="relative w-full max-w-[340px] shrink-0">
             <PhoneChatSimulation />
           </div>
         </div>
@@ -188,32 +271,40 @@ function PhoneChatSimulation() {
   useEffect(() => {
     if (isInView) {
        const sequence = async () => {
+          // 1. KAI greeting
           await new Promise(r => setTimeout(r, 500));
-          setMessages(m => [...m, { sender: 'user', text: "Часто болит спина после спортзала..." }]);
+          setMessages(m => [...m, { sender: 'ai', text: "Здравствуйте. Я — Кай, интеллектуальный консьерж студии «Эйдос». Что вас беспокоит сегодня?" }]);
 
+          // 2. Delay 1500ms
           await new Promise(r => setTimeout(r, 1500));
-          setMessages(m => [...m, { sender: 'ai', text: "Учитывая ваши проблемы... рекомендовал Общий массаж" }]);
+
+          // 3. User message
+          setMessages(m => [...m, { sender: 'user', text: "Привет, часто болит спина после работы, посоветуй, на какую процедуру и к какому специалисту мне лучше записаться?" }]);
+
+          // 4. Delay 2000ms
+          await new Promise(r => setTimeout(r, 2000));
+
+          // 5. KAI response
+          setMessages(m => [...m, { sender: 'ai', text: "Мы можем предложить вам несколько вариантов... рекомендовал записаться на **Общий массаж** у мастера **Александра**... Альтернативным вариантом может быть запись на **Мануальную артикуляцию** у мастера **Татьяны**." }]);
        };
        sequence();
     }
   }, [isInView]);
 
   return (
-    <div ref={containerRef} className="aspect-[9/19.5] w-[320px] rounded-[3rem] border-[8px] border-[#2A2D32] bg-[#F4F4F6] shadow-2xl relative overflow-hidden flex flex-col">
-       {/* Notch */}
-       <div className="absolute top-0 inset-x-0 h-6 flex justify-center">
-          <div className="w-1/3 h-full bg-[#2A2D32] rounded-b-xl"></div>
-       </div>
+    <div ref={containerRef} className="phone-mockup bg-[#F4F4F6] w-full flex flex-col">
+       <div className="phone-notch"><div className="phone-notch-inner"></div></div>
 
-       <div className="flex-1 p-4 pt-12 flex flex-col gap-4 overflow-y-auto">
+       <div className="flex-1 p-4 pt-14 flex flex-col gap-4 overflow-y-auto">
           {messages.map((msg, i) => (
              <motion.div
                key={i}
                initial={{ opacity: 0, y: 10, scale: 0.95 }}
                animate={{ opacity: 1, y: 0, scale: 1 }}
-               className={`max-w-[85%] p-3 rounded-2xl text-sm ${msg.sender === 'user' ? 'bg-[#1A1D20] text-[#F4F4F6] self-end rounded-tr-sm' : 'bg-white text-[#1A1D20] shadow-sm self-start rounded-tl-sm'}`}
+               className={`max-w-[85%] p-3 rounded-2xl text-sm ${msg.sender === 'user' ? 'bg-[#007AFF] text-white self-end rounded-tr-sm' : 'bg-white text-[#1A1D20] shadow-sm self-start rounded-tl-sm'}`}
              >
-                {msg.text}
+                {/* Render strong tags properly if any */}
+                <span dangerouslySetInnerHTML={{ __html: msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
              </motion.div>
           ))}
        </div>
