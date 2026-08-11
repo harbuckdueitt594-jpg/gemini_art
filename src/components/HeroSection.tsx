@@ -31,12 +31,15 @@ export default function HeroSection() {
           backgroundImage: 'radial-gradient(circle at 50% 30%, #484D53 0%, #08080A 60%)',
         }}
       />
+      <div
+        className="absolute inset-0 z-0 pointer-events-none bg-[url('/Man_turning_head_motion_blur_202608052201.jpeg')] bg-cover bg-center mix-blend-luminosity opacity-40"
+      />
 
       {/* Top Peripheral UI */}
-      <div className="absolute top-8 left-8 z-10 text-xs font-mono tracking-widest text-text-primary/70">
+      <div className="absolute top-8 left-8 z-10 text-sm md:text-base tracking-[0.2em] font-medium font-mono text-text-primary/70">
         CHERNIKOV // CREATIVE DIRECTION & AI ENGINEERING
       </div>
-      <div className="absolute top-8 right-8 z-10 text-xs font-mono tracking-widest text-text-primary/70">
+      <div className="absolute top-8 right-8 z-10 text-sm md:text-base tracking-[0.2em] font-medium font-mono text-text-primary/70">
         AI / FIGMA /
       </div>
 
@@ -46,16 +49,16 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Left UI: Vertical stack tags */}
-      <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2 text-xs font-mono tracking-widest text-text-primary/70">
-        <div>DESIGN ARCHIVE</div>
-        <div>BRAND SYSTEMS</div>
-        <div>NEURO-CINEMATICS</div>
-        <div>VIBE-CODING</div>
-        <div>AI AGENTS</div>
+      <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2 font-mono text-text-primary/70 text-sm md:text-base tracking-widest">
+        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">DESIGN ARCHIVE</div>
+        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">BRAND SYSTEMS</div>
+        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">NEURO-CINEMATICS</div>
+        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">VIBE-CODING</div>
+        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">AI AGENTS</div>
       </div>
 
       {/* Bottom Right Widget */}
-      <div className="absolute bottom-8 right-8 z-10 backdrop-blur-2xl bg-white/[0.03] border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] rounded-2xl p-4 flex flex-col gap-3 text-xs font-mono text-text-primary/80">
+      <div className="absolute bottom-8 right-8 z-10 backdrop-blur-2xl bg-white/[0.03] border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] rounded-2xl p-6 flex flex-col gap-3 text-sm font-mono text-text-primary/80">
         <div className="flex flex-col gap-1">
           <span>ST. PETERSBURG: 59.9343° N | 30.3351° E</span>
           <span>BRYANSK: 53.2435° N | 34.3634° E</span>

@@ -47,7 +47,7 @@ export default function CategoryIndex() {
               }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             >
-              <h3 className={`font-display text-6xl font-bold tracking-tighter transition-all duration-500 uppercase ${isHovered ? 'text-[#F4F4F6] translate-x-4' : 'text-gray-700'}`}>
+              <h3 className={`font-display text-6xl font-bold tracking-tighter transition-all duration-500 uppercase ${isHovered ? 'text-[#EAECEE] scale-105 translate-x-4' : 'text-[#8C9298]'}`}>
                 {cat.title}
               </h3>
 
