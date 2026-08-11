@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import GrainOverlay from "@/components/GrainOverlay";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "cyrillic"],
+});
+
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -21,9 +27,10 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${inter.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${syne.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col selection:bg-white/20 selection:text-white">
+      <body className="min-h-full flex flex-col selection:bg-accent/20 selection:text-accent font-sans bg-main">
+        <GrainOverlay />
         {children}
       </body>
     </html>
