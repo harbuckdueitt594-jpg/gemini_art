@@ -11,13 +11,14 @@ export default function ManifestoSection() {
 
   return (
     <section className="relative w-full py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
-      <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 relative items-center min-h-[60vh]">
+      <div className="relative w-full max-w-7xl mx-auto min-h-[60vh] flex flex-col items-center justify-center text-center">
+
 
         {/* Floating 3D Image Cards */}
         <motion.div
-          whileHover={{ y: -10, rotate: 2, scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="absolute -left-12 top-10 w-64 aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+          animate={{ y: [-8, 8, -8] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+          className="absolute -top-10 left-4 md:left-20 w-56 aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
         >
           <div className="text-xs font-mono tracking-widest text-[#8C9298]">FASHION / 01</div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -28,8 +29,35 @@ export default function ManifestoSection() {
           </div>
         </motion.div>
 
+        <motion.div
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-1/2 right-4 md:right-10 -translate-y-1/2 w-48 aspect-square bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+        >
+          <div className="text-xs font-mono tracking-widest text-[#8C9298]">BEAUTY / 02</div>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg width="100" height="100" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="160" height="160" stroke="#1A1D20" strokeWidth="1" strokeDasharray="4 4" opacity="0.2"/>
+            </svg>
+          </div>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [-6, 6, -6] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -bottom-10 left-10 md:left-40 w-60 aspect-[4/3] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+        >
+          <div className="text-xs font-mono tracking-widest text-[#8C9298]">TECH / 03</div>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+             <svg width="120" height="80" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20" y1="50" x2="180" y2="50" stroke="#1A1D20" strokeWidth="1" strokeDasharray="4 4" opacity="0.2"/>
+             </svg>
+          </div>
+        </motion.div>
+
+
         {/* Center: Typography */}
-        <div className="col-span-7 col-start-3 z-20" ref={containerRef}>
+        <div className="flex flex-col items-center justify-center text-center mx-auto max-w-4xl z-20 relative" ref={containerRef}>
           <h2 className="font-display text-5xl tracking-tighter font-medium leading-[1.1] text-[#1A1D20]">
             {text.split("").map((char, index) => (
               <motion.span
