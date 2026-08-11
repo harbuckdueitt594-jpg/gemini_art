@@ -59,25 +59,32 @@ export default function FooterSection() {
 
         {/* Animated Headline with Magnetic Hover */}
         <motion.h2
-          className="text-4xl md:text-6xl lg:text-8xl font-display font-bold text-center tracking-tighter cursor-default"
+          className="text-[clamp(3rem,8vw,8rem)] leading-[0.9] whitespace-pre-wrap [word-break:keep-all] font-display font-bold text-center tracking-tighter cursor-default"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          {headline.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              whileHover={{
-                color: "#fff",
-                textShadow: "0 0 20px rgba(255,255,255,0.5)",
-                y: -5
-              }}
-              transition={{ duration: 0.1, delay: index * 0.05 }}
-              className="inline-block"
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
+          {headline.split(" ").map((word, wordIndex) => (
+            <span key={wordIndex} className="inline-block mr-[2vw]">
+              {word.split("").map((char, charIndex) => {
+                const index = wordIndex * 10 + charIndex;
+                return (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                    whileHover={{
+                      color: "#fff",
+                      textShadow: "0 0 20px rgba(255,255,255,0.5)",
+                      y: -5
+                    }}
+                    transition={{ duration: 0.1, delay: index * 0.02 }}
+                    className="inline-block"
+                  >
+                    {char}
+                  </motion.span>
+                );
+              })}
+            </span>
           ))}
         </motion.h2>
 
@@ -86,23 +93,27 @@ export default function FooterSection() {
           {/* Internal moving glow */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
 
-          <div
+          <motion.div
             onClick={() => copyToClipboard("@shivv1e", "TELEGRAM")}
             className="flex flex-col gap-2 cursor-pointer group/item relative z-10"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <span className="text-xs font-mono tracking-widest text-[#EAECEE]/60 group-hover/item:text-[#EAECEE] transition-colors">TELEGRAM</span>
             <span className="text-xl font-display font-medium group-hover/item:text-white transition-colors">@shivv1e</span>
-          </div>
+          </motion.div>
 
           <div className="w-px h-12 bg-white/10 hidden sm:block relative z-10" />
 
-          <div
+          <motion.div
             onClick={() => copyToClipboard("edenpearce15@gmail.com", "EMAIL")}
             className="flex flex-col gap-2 cursor-pointer group/item items-start sm:items-end relative z-10"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <span className="text-xs font-mono tracking-widest text-[#EAECEE]/60 group-hover/item:text-[#EAECEE] transition-colors">EMAIL</span>
             <span className="text-xl font-display font-medium group-hover/item:text-white transition-colors">edenpearce15@gmail.com</span>
-          </div>
+          </motion.div>
 
         </div>
 

@@ -18,7 +18,7 @@ export default function ManifestoSection() {
         <motion.div
           animate={{ y: [-8, 8, -8] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0 }}
-          className="absolute -top-10 left-4 md:left-20 w-80 aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+          className="absolute -top-10 left-4 md:left-20 w-[28rem] aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10 hover-physics"
         >
           <div className="text-xs font-mono tracking-widest text-[#8C9298]">FASHION / 01</div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -32,7 +32,7 @@ export default function ManifestoSection() {
         <motion.div
           animate={{ y: [-10, 10, -10] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-1/2 right-4 md:right-10 -translate-y-1/2 w-72 aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+          className="absolute top-1/2 right-4 md:right-10 -translate-y-1/2 w-[25rem] aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10 hover-physics"
         >
           <div className="text-xs font-mono tracking-widest text-[#8C9298]">BEAUTY / 02</div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -45,7 +45,7 @@ export default function ManifestoSection() {
         <motion.div
           animate={{ y: [-6, 6, -6] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-10 left-10 md:left-40 w-80 aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+          className="absolute -bottom-10 left-10 md:left-40 w-[28rem] aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10 hover-physics"
         >
           <div className="text-xs font-mono tracking-widest text-[#8C9298]">TECH / 03</div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

@@ -38,7 +38,7 @@ export default function InteractiveFolders() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 backdrop-blur-2xl bg-black/40 flex flex-col p-10 overflow-y-auto"
+            className="fixed inset-0 z-50 backdrop-blur-2xl bg-[#1A1D20]/80 flex flex-col p-10 overflow-y-auto"
           >
             <div className="w-full max-w-7xl mx-auto flex flex-col gap-8 relative h-full">
               <div className="flex justify-between items-center bg-[#EAECEE] p-6 rounded-2xl sticky top-0 z-10 shadow-lg">
