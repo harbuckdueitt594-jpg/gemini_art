@@ -23,7 +23,7 @@ export default function CategoryIndex() {
   };
 
   return (
-    <section className="relative w-full py-32 px-8 bg-surface text-text-primary min-h-screen flex items-center">
+    <section className="relative w-full py-32 px-8 bg-gradient-to-b from-[#EAECEE] via-[#5E646A] to-[#08080A] text-text-primary min-h-screen flex items-center">
       {/* Corner Tags */}
       <div className="absolute top-8 left-8 text-xs font-mono tracking-widest text-text-secondary">CONTENT</div>
       <div className="absolute top-8 right-8 text-xs font-mono tracking-widest text-text-secondary">AI</div>
@@ -38,18 +38,16 @@ export default function CategoryIndex() {
           return (
             <motion.div
               key={cat.id}
-              className="group flex items-center justify-between py-6 border-b border-white/10 cursor-pointer"
+              className="group flex items-center justify-between py-6 cursor-pointer"
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => scrollToSection(cat.id)}
               animate={{
-                scale: isHovered ? 1.05 : 1,
-                x: isHovered ? 20 : 0,
                 opacity: isFaded ? 0.3 : 1
               }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             >
-              <h3 className={`font-display text-3xl md:text-5xl lg:text-7xl font-bold uppercase transition-colors duration-300 ${isHovered ? 'text-text-primary' : 'text-text-secondary'}`}>
+              <h3 className={`font-display text-6xl font-bold tracking-tighter transition-all duration-500 uppercase ${isHovered ? 'text-[#F4F4F6] translate-x-4' : 'text-gray-700'}`}>
                 {cat.title}
               </h3>
 

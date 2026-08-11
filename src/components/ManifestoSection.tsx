@@ -11,30 +11,26 @@ export default function ManifestoSection() {
 
   return (
     <section className="relative w-full py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 relative items-center min-h-[60vh]">
 
-        {/* Left: 3D Image Card */}
-        <div className="lg:col-span-5 relative perspective-1000">
-          <motion.div
-            whileHover={{ rotateX: 5, rotateY: -5, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative w-full aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6"
-          >
-            <div className="text-xs font-mono tracking-widest text-[#8C9298]">FASHION / 01</div>
+        {/* Floating 3D Image Cards */}
+        <motion.div
+          whileHover={{ y: -10, rotate: 2, scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="absolute -left-12 top-10 w-64 aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-6 z-10"
+        >
+          <div className="text-xs font-mono tracking-widest text-[#8C9298]">FASHION / 01</div>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg width="120" height="120" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="98" stroke="#1A1D20" strokeWidth="1" strokeDasharray="4 4" opacity="0.2"/>
+              <circle cx="100" cy="100" r="80" stroke="#1A1D20" strokeWidth="0.5" opacity="0.1"/>
+            </svg>
+          </div>
+        </motion.div>
 
-            {/* SVG placeholder for aesthetic frame */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="98" stroke="#1A1D20" strokeWidth="1" strokeDasharray="4 4" opacity="0.2"/>
-                <circle cx="100" cy="100" r="80" stroke="#1A1D20" strokeWidth="0.5" opacity="0.1"/>
-              </svg>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Right: Typography */}
-        <div className="lg:col-span-7" ref={containerRef}>
-          <h2 className="font-display text-4xl lg:text-6xl leading-tight font-medium tracking-tight">
+        {/* Center: Typography */}
+        <div className="col-span-7 col-start-3 z-20" ref={containerRef}>
+          <h2 className="font-display text-5xl tracking-tighter font-medium leading-[1.1] text-[#1A1D20]">
             {text.split("").map((char, index) => (
               <motion.span
                 key={index}
