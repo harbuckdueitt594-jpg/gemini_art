@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import BlurReveal from "@/components/BlurReveal";
 
 export default function HeroSection() {
   const [time, setTime] = useState("");
@@ -10,7 +10,7 @@ export default function HeroSection() {
     const updateTime = () => {
       const now = new Date();
       // UTC+3 (MSK)
-      const mskTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000) + (3 * 3600000));
+      const mskTime = new Date(now.getTime() + now.getTimezoneOffset() * 60000 + 3 * 3600000);
       const hours = mskTime.getHours().toString().padStart(2, "0");
       const minutes = mskTime.getMinutes().toString().padStart(2, "0");
       const seconds = mskTime.getSeconds().toString().padStart(2, "0");
@@ -23,55 +23,76 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-between p-8 overflow-hidden">
-      {/* Background radial gradient */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 50% 30%, #484D53 0%, #08080A 60%)',
-        }}
-      />
-      <div
-        className="absolute inset-0 z-0 pointer-events-none bg-[url('/Man_turning_head_motion_blur_202608052201.jpeg')] bg-cover bg-center mix-blend-luminosity opacity-40"
-      />
-
-      {/* Top Peripheral UI */}
-      <div className="absolute top-8 left-8 z-10 text-sm md:text-base tracking-[0.2em] font-medium font-mono text-text-primary/70">
-        CHERNIKOV // CREATIVE DIRECTION & AI ENGINEERING
-      </div>
-      <div className="absolute top-8 right-8 z-10 text-sm md:text-base tracking-[0.2em] font-medium font-mono text-text-primary/70">
-        AI / FIGMA /
+    <section className="relative w-full min-h-screen flex flex-col justify-between border-b border-[#E2E7ED] bg-[#F6F8FA] overflow-hidden">
+      {/* 16:9 Hero Container with BlurReveal */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <BlurReveal
+          image={{
+            src: "/Man_turning_head_motion_blur_202608052201.jpeg",
+            alt: "Chernikov Digital Portfolio Hero",
+          }}
+          size={160}
+          rounding={0}
+          blur={8}
+          ring={true}
+          ringOptions={{ icon: true, color: "rgba(10,13,18,0.9)" }}
+          intro={true}
+          introDuration={2.0}
+        />
       </div>
 
-      {/* Center Content (if any, keeping it minimalistic as requested) */}
-      <div className="relative z-10 flex-1 flex items-center justify-center pointer-events-none">
-        {/* We can leave this empty or add a central element later if needed */}
-      </div>
-
-      {/* Bottom Left UI: Vertical stack tags */}
-      <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2 font-mono text-text-primary/70 text-sm md:text-base tracking-widest">
-        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">DESIGN ARCHIVE</div>
-        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">BRAND SYSTEMS</div>
-        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">NEURO-CINEMATICS</div>
-        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">VIBE-CODING</div>
-        <div className="hover:text-white hover:translate-x-2 transition-all cursor-pointer">AI AGENTS</div>
-      </div>
-
-      {/* Bottom Right Widget */}
-      <div className="absolute bottom-8 right-8 z-10 backdrop-blur-2xl bg-white/[0.03] border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] rounded-2xl p-6 flex flex-col gap-3 text-sm font-mono text-text-primary/80">
-        <div className="flex flex-col gap-1">
-          <span>ST. PETERSBURG: 59.9343° N | 30.3351° E</span>
-          <span>BRYANSK: 53.2435° N | 34.3634° E</span>
+      {/* Root Navigation Header & Metadata */}
+      <header className="relative z-10 w-full p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs md:text-sm font-mono tracking-widest text-[#0A0D12] border-b border-[#E2E7ED]/50 bg-[#F6F8FA]/80 backdrop-blur-md">
+        <div className="font-bold uppercase tracking-wider">
+          CHERNIKOV // CREATIVE DIRECTION & AI ENGINEERING
         </div>
-        <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-          <motion.div
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-2 h-2 rounded-full bg-accent"
-          />
-          <span className="font-bold tracking-widest text-text-primary">{time || "00:00:00 MSK"}</span>
+        <div className="flex items-center gap-6 text-[#475569]">
+          <span>TIME-TO-MARKET REDUCTION 3–5X</span>
+          <span className="hidden md:inline">|</span>
+          <span className="text-[#0A0D12] font-semibold">ST. PETERSBURG / BRYANSK</span>
+        </div>
+      </header>
+
+      {/* Center Content Placeholder */}
+      <div className="relative z-10 flex-1 flex items-center justify-center pointer-events-none p-8">
+        <div className="text-center max-w-2xl bg-[#FFFFFF]/80 backdrop-blur-md border border-[#E2E7ED] p-6 md:p-8 rounded-none shadow-sm pointer-events-auto">
+          <p className="text-xs font-mono tracking-widest text-[#94A3B8] mb-2 uppercase">AI CREATOR MANIFESTO SUMMARY</p>
+          <h1 className="font-display text-2xl md:text-4xl font-bold tracking-tighter text-[#0A0D12] uppercase leading-[0.9]">
+            SYNTHESIZING HIGH-FASHION ART DIRECTION WITH AUTONOMOUS AI SYSTEMS
+          </h1>
         </div>
       </div>
+
+      {/* Bottom Footer Metadata */}
+      <footer className="relative z-10 w-full p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-mono text-[#0A0D12] border-t border-[#E2E7ED]/50 bg-[#F6F8FA]/80 backdrop-blur-md items-center">
+        {/* Coordinates */}
+        <div className="flex flex-col gap-1 text-[#475569]">
+          <div>ST. PETERSBURG: 59.9343° N | 30.3351° E</div>
+          <div>BRYANSK: 53.2435° N | 34.3634° E</div>
+        </div>
+
+        {/* Categories / Archive Tags */}
+        <div className="flex flex-wrap gap-3 justify-start md:justify-center text-[#475569]">
+          <span className="hover:text-[#0A0D12] cursor-pointer transition-colors">DESIGN ARCHIVE</span>
+          <span>•</span>
+          <span className="hover:text-[#0A0D12] cursor-pointer transition-colors">BRAND SYSTEMS</span>
+          <span>•</span>
+          <span className="hover:text-[#0A0D12] cursor-pointer transition-colors">NEURO-CINEMATICS</span>
+          <span>•</span>
+          <span className="hover:text-[#0A0D12] cursor-pointer transition-colors">AI AGENTS</span>
+        </div>
+
+        {/* Live Status & Clock */}
+        <div className="flex items-center justify-start md:justify-end gap-4">
+          <div className="flex items-center gap-2 bg-[#FFFFFF] border border-[#E2E7ED] px-3 py-1.5 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#0A0D12] animate-pulse" />
+            <span className="font-bold tracking-widest text-[#0A0D12]">{time || "21:43:45 MSK"}</span>
+          </div>
+          <div className="bg-[#EDF1F5] border border-[#E2E7ED] px-3 py-1.5 text-[#475569] font-medium">
+            AVAILABLE FOR Q2/Q3
+          </div>
+        </div>
+      </footer>
     </section>
   );
 }

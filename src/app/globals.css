@@ -1,17 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-light: #EAECEE;
-  --color-dark: #656A70;
-
-  --color-main: #656A70;
-  --color-surface: #1A1D20;
-  --color-text-primary: #EAECEE;
-  --color-surface-secondary: #D8DBDE;
-  --color-text-secondary: #8C9298;
-  --color-radial-light: #737980;
-  --color-radial-dark: #484D53;
-  --color-accent: #00FF9D;
+  --color-bg-canvas: #F6F8FA;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-subtle: #EDF1F5;
+  --color-border-subtle: #E2E7ED;
+  --color-border-strong: #CBD5E1;
+  --color-text-primary: #0A0D12;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-accent-mono: #0A0D12;
 
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-display: var(--font-syne), var(--font-inter), sans-serif;
@@ -19,36 +17,46 @@
 
 @layer base {
   :root {
-    --background: #EAECEE;
-    --foreground: #1A1D20;
+    --bg-canvas: #F6F8FA;
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #EDF1F5;
+    --border-subtle: #E2E7ED;
+    --border-strong: #CBD5E1;
+    --text-primary: #0A0D12;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --accent-mono: #0A0D12;
+
+    --background: #F6F8FA;
+    --foreground: #0A0D12;
   }
 }
 
 @layer utilities {
   .bg-glass {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-subtle);
   }
 
   .bg-liquid-glass {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px rgba(10, 13, 18, 0.03);
   }
 
   .bg-liquid-glass-dark {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(10, 13, 18, 0.03);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px rgba(10, 13, 18, 0.02);
   }
 
   .phone-mockup {
-    @apply aspect-[9/19.5] rounded-[3rem] border-[10px] md:border-[14px] border-[#111] shadow-2xl overflow-hidden relative;
+    @apply aspect-[9/19.5] rounded-[3rem] border-[10px] md:border-[14px] border-[#0A0D12] shadow-xl overflow-hidden relative;
   }
 
   .phone-notch {
@@ -56,11 +64,11 @@
   }
 
   .phone-notch-inner {
-    @apply w-[35%] h-full bg-[#111] rounded-b-2xl md:rounded-b-3xl;
+    @apply w-[35%] h-full bg-[#0A0D12] rounded-b-2xl md:rounded-b-3xl;
   }
 
   .laptop-mockup {
-    @apply aspect-[16/10] rounded-t-3xl border-[8px] md:border-[12px] border-[#111] shadow-2xl overflow-hidden relative;
+    @apply aspect-[16/10] rounded-t-3xl border-[8px] md:border-[12px] border-[#0A0D12] shadow-xl overflow-hidden relative;
   }
 }
 
@@ -68,6 +76,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
