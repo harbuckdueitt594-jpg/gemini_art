@@ -22,6 +22,10 @@
     --background: #EAECEE;
     --foreground: #1A1D20;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {
@@ -68,6 +72,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
