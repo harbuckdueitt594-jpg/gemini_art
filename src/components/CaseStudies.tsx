@@ -1,313 +1,348 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import ScrambleText from "./ScrambleText";
+import ScrollTextHighlight from "./ScrollTextHighlight";
+import CoverflowGallery from "./CoverflowGallery";
+import BlurCarousel from "./BlurCarousel";
+import HoverImageReveal from "./HoverImageReveal";
+import MagneticCarousel from "./MagneticCarousel";
 
 export default function CaseStudies() {
   return (
     <div className="w-full bg-[#08080A] text-text-primary">
-            {/* Case 01: EIDOS MASSAGE STUDIO */}
+
+      {/* ==========================================
+          CASE 01: EIDOS MASSAGE STUDIO
+      ========================================== */}
       <section id="smm-brand" className="py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-4">01 / SMM & BRAND IDENTITY</h2>
-            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+          <div className="mb-4">
+            <h2 className="text-xs font-mono tracking-widest text-[#8C9298] mb-3 uppercase">
+              01 / SMM & BRAND IDENTITY (Eidos Massage Studio)
+            </h2>
+            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#1A1D20]">
               EIDOS MASSAGE STUDIO
             </h3>
-            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/70 max-w-3xl">От комнаты к своему пространству</p>
-          </div>
-
-          <div className="flex flex-col gap-16">
-            {/* Top Row (3 Cards) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden relative shadow-lg">
-                <div className="absolute inset-0 flex items-center justify-center font-display text-[#8C9298]">PHOTO 1</div>
-              </div>
-              <div className="bg-liquid-glass rounded-xl p-8 flex flex-col justify-center shadow-lg">
-                <p className="text-lg md:text-xl font-sans text-[#1A1D20] text-left">
-                  При масштабировании бизнеса возникла необходимость сменить любительский визуал на премиальную, системную айдентику. Задача — отстроиться от конкурентов с банальными «массажными штампами» (свечи, лотосы, бежевые стоки).
-                </p>
-              </div>
-              <div className="aspect-[3/4] bg-[#D8DBDE] rounded-xl overflow-hidden relative shadow-lg">
-                <div className="absolute inset-0 flex items-center justify-center font-display text-[#8C9298]">PHOTO 2</div>
-              </div>
-            </div>
-
-            {/* Middle Text Blocks */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-4 md:pl-4">
-                <h4 className="text-2xl md:text-4xl font-display font-light text-[#1A1D20] text-left">Стратегия и решение:</h4>
-              </div>
-              <div className="md:col-span-6 md:col-start-6 md:pr-4">
-                <p className="text-lg font-sans text-[#1A1D20]/80 text-left">
-                  Построение единого визуального языка: от контента в соцсетях до печатных носителей. Чистая эстетика, типографика, фокус на профессиональной реабилитации.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-4 md:pl-4">
-                <h4 className="text-2xl md:text-4xl font-display font-light text-[#1A1D20] text-left">Результат и бизнес-эффект:</h4>
-              </div>
-              <div className="md:col-span-6 md:col-start-6 md:pr-4">
-                <p className="text-lg font-sans text-[#1A1D20]/80 text-left">
-                  100% единый стиль во всех точках касания (SMM, печать, веб). Рост вовлеченности и формирование образа премиального пространства.
-                </p>
-              </div>
-            </div>
-
-            {/* Bottom Collage (Masonry of 8 photos) */}
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 mt-8">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className={`bg-[#D8DBDE] rounded-xl overflow-hidden break-inside-avoid shadow-sm hover:shadow-xl transition-shadow ${i % 3 === 0 ? 'aspect-video' : 'aspect-[3/4]'}`}>
-                   <div className="w-full h-full flex items-center justify-center font-display text-[#8C9298]">IMG {i+1}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case 02: MAKE-UP ARTIST LEANCA */}
-      <section id="beauty-fx" className="py-32 px-8 bg-gradient-to-b from-[#EAECEE] to-[#656A70] text-[#EAECEE]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-sm font-mono tracking-widest text-[#1A1D20]/70 mb-4">02 / SMM & BRAND IDENTITY</h2>
-            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#1A1D20]">
-              MAKE-UP ARTIST
-            </h3>
-            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/80 max-w-3xl">УПАКОВКА ПОРТФОЛИО ДЛЯ BEAUTY & FX ИНДУСТРИИ</p>
-          </div>
-
-          <div className="w-full flex justify-center mb-16">
-            <p className="text-lg md:text-xl font-sans text-center max-w-4xl text-[#EAECEE] bg-[#1A1D20]/10 p-8 rounded-2xl backdrop-blur-sm">
-              В соцсетях такой сложный крафт нужно продавать через эмоции, детализацию и гордость за ручной труд. Ниже — работы по оформлению слайдов карусели для соцсетей гримера.
+            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/70 max-w-3xl">
+              От локального пространства к премиальной экосистеме
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-             {/* 6 Vertical Images */}
-             {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="aspect-[3/4] bg-liquid-glass-dark rounded-xl overflow-hidden group hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 ease-out cursor-pointer relative shadow-lg">
-                   <div className="w-full h-full flex items-center justify-center font-display text-[#EAECEE]/50">SLIDE {i}</div>
-                </div>
-             ))}
+          {/* Large Scramble Text Header */}
+          <div className="w-full bg-white/40 backdrop-blur-md rounded-2xl p-8 border border-black/5 shadow-sm">
+            <ScrambleText
+              words="При масштабировании бизнеса возникла необходимость сменить любительский визуал на премиальную, системную айдентику. Задача — отстроиться от конкурентов с банальными «массажными штампами» (свечи, лотосы, бежевые стоки)."
+              tag="p"
+              className="font-display text-xl md:text-3xl font-medium tracking-tight text-[#1A1D20]"
+              color="#1A1D20"
+              scrambleSpeed={25}
+              hoverEffect="diffusion"
+            />
+          </div>
+
+          {/* Editorial 2-Column Section with ScrollTextHighlight */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-8 border-t border-b border-black/10">
+            {/* Column 1: Strategy */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-2xl font-display font-bold text-[#1A1D20] uppercase tracking-tight">
+                Стратегия и решение:
+              </h4>
+              <ScrollTextHighlight
+                text="Построение единого визуального языка: от контента в соцсетях до печатных носителей. Чистая эстетика, типографика, фокус на профессиональной реабилитации."
+                dimColor="#8C9298"
+                highlightColor="#1A1D20"
+                splitBy="word"
+                className="font-sans text-lg md:text-xl font-normal"
+              />
+            </div>
+
+            {/* Column 2: Result */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-2xl font-display font-bold text-[#1A1D20] uppercase tracking-tight">
+                Результат и бизнес-эффект:
+              </h4>
+              <ScrollTextHighlight
+                text="100% единый стиль во всех точках касания (SMM, печать, веб). Рост вовлеченности и формирование образа премиального пространства."
+                dimColor="#8C9298"
+                highlightColor="#1A1D20"
+                splitBy="word"
+                className="font-sans text-lg md:text-xl font-normal"
+              />
+            </div>
+          </div>
+
+          {/* Coverflow Gallery Showcase */}
+          <div className="w-full flex flex-col items-center mt-8">
+            <div className="text-xs font-mono tracking-widest text-[#8C9298] mb-4 uppercase">
+              3D COVERFLOW BRAND GALLERY
+            </div>
+            <CoverflowGallery
+              slides={[
+                { image: { src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&auto=format&fit=crop&q=80" }, title: "Eidos Studio Interior" },
+                { image: { src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&auto=format&fit=crop&q=80" }, title: "Rehabilitation Suite" },
+                { image: { src: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&auto=format&fit=crop&q=80" }, title: "Massage Equipment" },
+                { image: { src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&auto=format&fit=crop&q=80" }, title: "SMM & Brand Book" },
+                { image: { src: "https://images.unsplash.com/photo-1512290900676-26c2a6a095ae?w=800&auto=format&fit=crop&q=80" }, title: "Printed Collaterals" },
+              ]}
+              cardWidth={380}
+              cardHeight={380}
+              radius={16}
+              tilt={12}
+              autoplay={true}
+              showTitle={true}
+            />
           </div>
         </div>
       </section>
 
-            {/* Case 03: NEURO-CINEMATIC & E-COMMERCE */}
+      {/* ==========================================
+          CASE 02: MAKE-UP & FX ARTIST (Leanca)
+      ========================================== */}
+      <section id="beauty-fx" className="py-32 px-8 bg-gradient-to-b from-[#EAECEE] to-[#656A70] text-[#EAECEE]">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+          <div>
+            <h2 className="text-xs font-mono tracking-widest text-[#1A1D20]/70 mb-3 uppercase">
+              02 / SMM & BRAND IDENTITY (Make-Up & FX Artist)
+            </h2>
+            <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#1A1D20]">
+              MAKE-UP & FX ARTIST LEANCA
+            </h3>
+          </div>
+
+          {/* Large Highlighted Text */}
+          <div className="w-full bg-[#1A1D20]/10 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+            <ScrollTextHighlight
+              text="В соцсетях такой сложный крафт нужно продавать через эмоции, детализацию и гордость за ручной труд. Ниже — работы по оформлению слайдов карусели для соцсетей гримера."
+              dimColor="rgba(234, 236, 238, 0.4)"
+              highlightColor="#EAECEE"
+              splitBy="word"
+              className="font-display text-2xl md:text-4xl font-medium tracking-tight"
+            />
+          </div>
+
+          {/* 3 Blur Carousels (3, 7, and 3 photos) */}
+          <div className="flex flex-col gap-20 items-center">
+            {/* Component 1: 3 Photos */}
+            <div className="w-full flex flex-col items-center gap-4">
+              <span className="text-xs font-mono tracking-widest text-[#EAECEE]/60 uppercase">
+                SERIES A // BEAUTY CRAFT (3 SLIDES)
+              </span>
+              <BlurCarousel
+                slides={[
+                  { image: { src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&auto=format&fit=crop&q=80" }, title: "Editorial Beauty 01" },
+                  { image: { src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80" }, title: "Glow & Texture 02" },
+                  { image: { src: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&auto=format&fit=crop&q=80" }, title: "Cinematic Accent 03" },
+                ]}
+                cardWidth={450}
+                cardHeight={550}
+                radius={20}
+                blurAmount={35}
+              />
+            </div>
+
+            {/* Component 2: 7 Photos */}
+            <div className="w-full flex flex-col items-center gap-4">
+              <span className="text-xs font-mono tracking-widest text-[#EAECEE]/60 uppercase">
+                SERIES B // SPECIAL FX & CINEMATIC (7 SLIDES)
+              </span>
+              <BlurCarousel
+                slides={[
+                  { image: { src: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=800&auto=format&fit=crop&q=80" }, title: "Prosthetic Sculpt" },
+                  { image: { src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&auto=format&fit=crop&q=80" }, title: "Character Design" },
+                  { image: { src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&auto=format&fit=crop&q=80" }, title: "Film FX Details" },
+                  { image: { src: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&auto=format&fit=crop&q=80" }, title: "Creature FX" },
+                  { image: { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80" }, title: "Avante Garde" },
+                  { image: { src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&auto=format&fit=crop&q=80" }, title: "Stage Lighting" },
+                  { image: { src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&auto=format&fit=crop&q=80" }, title: "High-Fashion FX" },
+                ]}
+                cardWidth={480}
+                cardHeight={580}
+                radius={20}
+                blurAmount={40}
+              />
+            </div>
+
+            {/* Component 3: 3 Photos */}
+            <div className="w-full flex flex-col items-center gap-4">
+              <span className="text-xs font-mono tracking-widest text-[#EAECEE]/60 uppercase">
+                SERIES C // BACKSTAGE & PROCESS (3 SLIDES)
+              </span>
+              <BlurCarousel
+                slides={[
+                  { image: { src: "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=800&auto=format&fit=crop&q=80" }, title: "Handcrafted Pigments" },
+                  { image: { src: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&auto=format&fit=crop&q=80" }, title: "Precision Brushes" },
+                  { image: { src: "https://images.unsplash.com/photo-1500840218059-b1d012394d4d?w=800&auto=format&fit=crop&q=80" }, title: "Studio Lighting" },
+                ]}
+                cardWidth={450}
+                cardHeight={550}
+                radius={20}
+                blurAmount={35}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          CASE 03: NEURO-CINEMATIC E-COM
+      ========================================== */}
       <section id="neuro" className="py-32 px-8 bg-[#656A70] text-[#EAECEE]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-sm font-mono tracking-widest text-[#EAECEE]/70 mb-4">03 / NEURO-CINEMATIC E-COM & PRINT DESIGN</h2>
+        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+          <div>
+            <h2 className="text-xs font-mono tracking-widest text-[#EAECEE]/70 mb-3 uppercase">
+              03 / NEURO-CINEMATIC E-COM & PRINT DESIGN
+            </h2>
             <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#EAECEE]">
               CINEMATIC PRODUCTION
             </h3>
-            <p className="text-xl md:text-3xl font-display text-[#EAECEE]/80 max-w-3xl">без миллионных бюджетов на съемки</p>
           </div>
 
-          <div className="w-full mb-16 relative perspective-1000">
-            {/* Hero Mockup */}
-            <div className="w-full flex justify-center items-center h-auto max-w-5xl mx-auto mb-16 gap-4">
-              <div className="phone-mockup w-48 shrink-0 bg-[#EAECEE]">
-                 <div className="phone-notch"><div className="phone-notch-inner"></div></div>
-                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#1A1D20]/50">PHONE</div>
-              </div>
-              <div className="aspect-square w-24 shrink-0 bg-[#1A1D20] rounded-full flex items-center justify-center text-xs font-mono text-[#EAECEE]">
-                CHAIN
-              </div>
-            </div>
+          {/* Large Highlighted Paragraph */}
+          <div className="w-full bg-black/20 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+            <ScrollTextHighlight
+              text="Пока маркетплейсы и бренды соревнуются в кричащих цветах и визуальном шуме, я создаю сдержанные, глубокие цифровые среды для продуктов. С помощью сложного промпт-инжиниринга я генерирую фотореалистичные сцены (макро, студийный свет, природные локации), заменяя клиентам дорогостоящие предметные фотосессии."
+              dimColor="rgba(234, 236, 238, 0.4)"
+              highlightColor="#EAECEE"
+              splitBy="word"
+              className="font-display text-xl md:text-3xl font-medium tracking-tight"
+            />
+          </div>
 
-            <div className="flex justify-end w-full mb-24">
-              <p className="text-lg md:text-xl font-sans text-right max-w-3xl text-[#EAECEE] pr-4 md:pr-12">
-                Пока маркетплейсы и бренды соревнуются в кричащих цветах и визуальном шуме, я создаю сдержанные, глубокие цифровые среды для продуктов. С помощью сложного промпт-инжиниринга я генерирую фотореалистичные сцены (макро, студийный свет, природные локации), заменяя клиентам дорогостоящие предметные фотосессии.
-              </p>
+          {/* Hover Image Reveal Component */}
+          <div className="w-full mt-8">
+            <div className="text-xs font-mono tracking-widest text-[#EAECEE]/70 mb-6 uppercase text-center">
+              INTERACTIVE REEL MENU // CURSOR IMAGE REVEAL
             </div>
-
-            {/* Mockup Trio */}
-            <div className="flex justify-center items-center gap-8 md:gap-16 mb-32 flex-wrap">
-               <div className="phone-mockup w-48 bg-[#1A1D20] transform -rotate-6">
-                 <div className="phone-notch"><div className="phone-notch-inner bg-[#F4F4F6]"></div></div>
-                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#EAECEE]/50">PHONE 1</div>
-               </div>
-               <div className="phone-mockup w-56 bg-[#EAECEE] z-10 scale-110 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
-                 <div className="phone-notch"><div className="phone-notch-inner"></div></div>
-                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#1A1D20]/50">PHONE 2</div>
-               </div>
-               <div className="phone-mockup w-48 bg-[#1A1D20] transform rotate-6">
-                 <div className="phone-notch"><div className="phone-notch-inner bg-[#F4F4F6]"></div></div>
-                 <div className="absolute inset-0 flex items-center justify-center font-display text-[#EAECEE]/50">PHONE 3</div>
-               </div>
-            </div>
-
-            {/* E-Commerce Cases */}
-            <div className="w-full">
-              <h4 className="text-3xl font-display font-medium text-right mb-12 tracking-tighter">E-COMMERCE CASES</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[1, 2, 3, 4].map((idx) => (
-                  <div key={idx} className="flex flex-col gap-4">
-                    <div className="w-full aspect-[1082/717] bg-liquid-glass-dark rounded-xl flex items-center justify-center text-[#EAECEE]/50 group cursor-pointer hover:scale-[1.02] hover:shadow-2xl transition-all duration-700 ease-out">
-                        IMAGE {idx}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            <HoverImageReveal
+              items={[
+                { text: "NEW SEASON DROP", image: { src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&auto=format&fit=crop&q=80" } },
+                { text: "ESSENTIAL COLLECTION", image: { src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" } },
+                { text: "SUMMER EDITION", image: { src: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format&fit=crop&q=80" } },
+                { text: "STREET ICONS", image: { src: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&auto=format&fit=crop&q=80" } },
+                { text: "PREMIUM DENIM", image: { src: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=80" } },
+                { text: "ARCHIVE PIECES", image: { src: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80" } },
+              ]}
+              textColor="#FFFFFF"
+              dimColor="#8C9298"
+              imageWidth={320}
+              imageHeight={420}
+              rounded={20}
+              backgroundColor="transparent"
+            />
           </div>
         </div>
       </section>
 
-      {/* Case 04: POSTER DESIGN */}
-      <section id="posters" className="py-0 px-0 bg-[#656A70]">
-        <div className="w-full flex flex-col relative">
-          <div className="w-full aspect-video bg-[#1A1D20] flex items-center justify-center text-text-secondary/50 relative overflow-hidden">
-             <div className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50 bg-[#111]"></div>
-             <div className="absolute top-16 md:top-32 left-8 md:left-24 z-10">
-                <h2 className="text-sm font-mono tracking-widest text-[#EAECEE]/70 mb-4">04 / NEURO-CINEMATIC E-COM & PRINT DESIGN</h2>
-                <h3 className="text-4xl md:text-8xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#EAECEE]">
-                  CINEMATIC PRODUCTION
-                </h3>
-                <p className="text-xl md:text-4xl font-display text-[#EAECEE]/80 max-w-3xl">POSTER DESIGN</p>
-             </div>
-             <span className="font-display text-2xl z-0 absolute bottom-8 right-8">POSTER FULL BLEED 1</span>
+      {/* ==========================================
+          CASE 04: POSTER DESIGN (Magnetic Carousel)
+      ========================================== */}
+      <section id="posters" className="py-32 px-8 bg-[#1A1D20] text-[#EAECEE]">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+          <div>
+            <h2 className="text-xs font-mono tracking-widest text-[#00FF9D] mb-3 uppercase">
+              04 / NEURO-CINEMATIC E-COM & PRINT DESIGN
+            </h2>
+            <h3 className="text-4xl md:text-8xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#EAECEE]">
+              CINEMATIC PRODUCTION
+            </h3>
+            <p className="text-xl md:text-3xl font-display text-[#EAECEE]/70">POSTER DESIGN</p>
           </div>
-          {[2, 3, 4].map((idx) => (
-             <div key={idx} className="w-full aspect-video bg-[#1A1D20] border-t border-[#333] flex items-center justify-center text-[#EAECEE]/30 relative">
-                 <span className="font-display text-2xl">POSTER FULL BLEED {idx}</span>
-             </div>
-          ))}
+
+          {/* Magnetic Carousel component */}
+          <div className="w-full">
+            <div className="text-xs font-mono tracking-widest text-[#EAECEE]/60 mb-6 uppercase text-center">
+              MACOS DOCK STYLE // MAGNETIC PROXIMITY CAROUSEL
+            </div>
+            <MagneticCarousel
+              images={[
+                { src: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80", title: "POSTER 01 // EIDOS" },
+                { src: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80", title: "POSTER 02 // CINEMA" },
+                { src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80", title: "POSTER 03 // NEURO" },
+                { src: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800&auto=format&fit=crop&q=80", title: "POSTER 04 // AI LAB" },
+                { src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80", title: "POSTER 05 // ECOSYSTEM" },
+                { src: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=800&auto=format&fit=crop&q=80", title: "POSTER 06 // FUTURE" },
+              ]}
+              collapsedWidth={120}
+              hoverWidth={220}
+              collapsedHeight={360}
+              hoverHeight={420}
+              openSize={580}
+              gap={16}
+            />
+          </div>
         </div>
       </section>
 
-            {/* Case 05: VIBE-CODING & FAST WEB */}
-      <section id="vibe" className="py-32 px-8 bg-gradient-to-b from-[#656A70] to-[#EAECEE] text-[#656A70] overflow-hidden">
+      {/* ==========================================
+          CASE 05: VIBE-CODING & FAST WEB (Eidos-Studio.ru)
+      ========================================== */}
+      <section id="vibe" className="py-32 px-8 bg-gradient-to-b from-[#1A1D20] to-[#EAECEE] text-[#1A1D20]">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
           <div className="text-center">
-            <h2 className="text-sm font-mono tracking-widest text-[#1A1D20]/70 mb-4">05 / VIBE-CODING & RAPID WEB DEVELOPMENT</h2>
+            <h2 className="text-xs font-mono tracking-widest text-[#00FF9D] mb-3 uppercase">
+              05 / VIBE-CODING & FAST WEB — EIDOS-STUDIO.RU
+            </h2>
             <h3 className="text-4xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] uppercase mb-4 text-[#1A1D20]">
               EIDOS-STUDIO.RU
             </h3>
-            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/80">Запуск сайта под ключ за 7 дней</p>
+            <p className="text-xl md:text-3xl font-display text-[#1A1D20]/80">Кейс запуска под ключ за 7 дней</p>
           </div>
 
-          <div className="w-full relative perspective-1000 flex flex-col items-center">
-            <motion.div
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                e.currentTarget.style.transform = `rotateX(${-y / 40}deg) rotateY(${x / 40}deg)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = `rotateX(0deg) rotateY(0deg)`;
-              }}
-              style={{ transition: 'transform 0.1s ease-out' }}
-              className="laptop-mockup w-full max-w-5xl mx-auto bg-[#1A1D20] flex items-center justify-center text-[#EAECEE]"
-            >
-              <div className="absolute inset-0 flex items-center justify-center font-display text-4xl text-[#EAECEE]/30">EIDOS-STUDIO.RU</div>
-            </motion.div>
+          <div className="w-full flex flex-col items-center gap-8">
+            <div className="laptop-mockup w-full max-w-4xl mx-auto bg-[#1A1D20] flex items-center justify-center text-[#EAECEE]">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80"
+                alt="Eidos Studio Website"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            <p className="mt-12 text-xl font-sans text-center max-w-4xl text-[#1A1D20]">
-              Сочетание профессиональных знаний дизайн-систем, глубокого понимания ИИ инструментов (LLM промптинг) и базового программирования.
+            <p className="text-xl font-sans text-center max-w-4xl text-[#1A1D20] font-medium leading-relaxed">
+              Сочетание профессиональных знаний дизайн-систем, глубокого понимания ИИ-инструментов (LLM промптинг) и чистого стека. Lighthouse score: 100/100, сокращение сроков разработки в 3 раза.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto">
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="aspect-[4/5] bg-liquid-glass rounded-xl overflow-hidden shadow-lg relative">
-                   <div className="absolute inset-0 flex items-center justify-center font-display text-[#8C9298]">PHOTO</div>
-                </div>
-                <div className="bg-liquid-glass rounded-xl p-8 shadow-lg flex flex-col justify-center gap-4 text-[#1A1D20]">
-                   <h4 className="text-2xl font-display font-medium mb-4">Как был реализован проект:</h4>
-                   <ul className="list-disc pl-5 space-y-2 font-sans text-lg">
-                      <li>Отказ от раздутых корпоративных процессов в пользу agility.</li>
-                      <li>Полное создание UI/UX с помощью ИИ и ручной доводки.</li>
-                      <li>Скорость и оптимизация: 100/100 в Lighthouse.</li>
-                   </ul>
-                </div>
-             </div>
-
-             <div className="bg-liquid-glass rounded-xl p-8 shadow-lg w-full text-[#1A1D20]">
-                <p className="text-xl font-sans font-medium text-center">
-                  Результат: Живой действующий сайт eidos-studio.ru, созданный одним человеком с сокращением Time-to-Market в 3 раза.
-                </p>
-             </div>
           </div>
         </div>
       </section>
 
-      {/* Case 06: K.A.I. INTELLIGENCE (LIVE CHAT) */}
+      {/* ==========================================
+          CASE 06: AI SYSTEMS & CUSTOM AGENTS (K.A.I.)
+      ========================================== */}
       <section id="ai" className="py-32 px-8 bg-[#EAECEE] text-[#1A1D20]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="flex-1">
-            <h2 className="text-sm font-mono tracking-widest text-[#8C9298] mb-4">06 / AI SYSTEMS & CUSTOM AGENTS</h2>
-            <h3 className="text-5xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9] mb-8">K.A.I. Intelligence</h3>
+          <div className="flex-1 flex flex-col gap-6">
+            <h2 className="text-xs font-mono tracking-widest text-[#8C9298] uppercase">
+              06 / AI SYSTEMS & CUSTOM AGENTS
+            </h2>
+            <h3 className="text-5xl md:text-7xl font-display font-medium tracking-tighter leading-[0.9]">
+              K.A.I. Intelligence
+            </h3>
 
-            <div className="flex flex-col gap-6 text-[#1A1D20]/80 font-sans text-lg">
-               <p><strong>Проект:</strong> KAI Автономный ИИ ассистент студии «Эйдос».</p>
-               <p><strong>Стек:</strong> Llama 3.3 / Python / Google Apps Script / Web Integration</p>
-               <p><em>Кай находится в режиме тестирования.</em></p>
-               <p><strong>Бизнес-задача:</strong> Снизить нагрузку на администраторов и увеличить конверсию из посетителя сайта в запись на услугу.</p>
-               <p><strong>Решение:</strong> Разработка ИИ-агента, который знает всё об услугах, мастерах и ценах, может проконсультировать по симптомам (в рамках компетенций массажной студии) и предложить оптимальный вариант.</p>
+            <div className="flex flex-col gap-4 text-[#1A1D20]/80 font-sans text-base md:text-lg leading-relaxed">
+              <p><strong>Проект:</strong> KAI Автономный ИИ-ассистент студии «Эйдос».</p>
+              <p><strong>Стек:</strong> Llama 3.3, Python, Google Apps Script, Web Integration.</p>
+              <p className="text-sm font-mono text-[#8C9298]"><em>[Статус: Активное бета-тестирование]</em></p>
+              <p><strong>Бизнес-задача:</strong> Снизить нагрузку на администраторов и увеличить конверсию из посетителя сайта в запись на услугу.</p>
+              <p><strong>Решение:</strong> Разработка ИИ-агента, который знает всё об услугах, мастерах и ценах, может проконсультировать по симптомам и записать на прием.</p>
             </div>
           </div>
 
-          <div className="relative w-full max-w-[340px] shrink-0">
-            <PhoneChatSimulation />
+          <div className="phone-mockup w-full max-w-[340px] shrink-0 bg-[#F4F4F6] shadow-2xl">
+            <div className="phone-notch"><div className="phone-notch-inner" /></div>
+            <div className="p-4 pt-14 flex flex-col gap-3 font-sans text-xs">
+              <div className="bg-white p-3 rounded-2xl shadow-sm text-[#1A1D20]">
+                Здравствуйте! Я — Кай, ИИ-консьерж студии «Эйдос». Чем могу помочь?
+              </div>
+              <div className="bg-[#007AFF] text-white p-3 rounded-2xl self-end max-w-[85%]">
+                Привет! Посоветуй массаж после тяжелой рабочей недели.
+              </div>
+              <div className="bg-white p-3 rounded-2xl shadow-sm text-[#1A1D20]">
+                Рекомендую <strong>Реабилитационный массаж</strong> у мастера <strong>Александра</strong>. Записать вас?
+              </div>
+            </div>
           </div>
         </div>
       </section>
-    </div>
-  );
-}
 
-function PhoneChatSimulation() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-20%" });
-  const [messages, setMessages] = useState<{sender: string, text: string}[]>([]);
-
-  useEffect(() => {
-    if (isInView) {
-       const sequence = async () => {
-          // 1. KAI greeting
-          await new Promise(r => setTimeout(r, 500));
-          setMessages(m => [...m, { sender: 'ai', text: "Здравствуйте. Я — Кай, интеллектуальный консьерж студии «Эйдос». Что вас беспокоит сегодня?" }]);
-
-          // 2. Delay 1500ms
-          await new Promise(r => setTimeout(r, 1500));
-
-          // 3. User message
-          setMessages(m => [...m, { sender: 'user', text: "Привет, часто болит спина после работы, посоветуй, на какую процедуру и к какому специалисту мне лучше записаться?" }]);
-
-          // 4. Delay 2000ms
-          await new Promise(r => setTimeout(r, 2000));
-
-          // 5. KAI response
-          setMessages(m => [...m, { sender: 'ai', text: "Мы можем предложить вам несколько вариантов... рекомендовал записаться на **Общий массаж** у мастера **Александра**... Альтернативным вариантом может быть запись на **Мануальную артикуляцию** у мастера **Татьяны**." }]);
-       };
-       sequence();
-    }
-  }, [isInView]);
-
-  return (
-    <div ref={containerRef} className="phone-mockup bg-[#F4F4F6] w-full flex flex-col">
-       <div className="phone-notch"><div className="phone-notch-inner"></div></div>
-
-       <div className="flex-1 p-4 pt-14 flex flex-col gap-4 overflow-y-auto">
-          {messages.map((msg, i) => (
-             <motion.div
-               key={i}
-               initial={{ opacity: 0, y: 10, scale: 0.95 }}
-               animate={{ opacity: 1, y: 0, scale: 1 }}
-               className={`max-w-[85%] p-3 rounded-2xl text-sm ${msg.sender === 'user' ? 'bg-[#007AFF] text-white self-end rounded-tr-sm' : 'bg-white text-[#1A1D20] shadow-sm self-start rounded-tl-sm'}`}
-             >
-                {/* Render strong tags properly if any */}
-                <span dangerouslySetInnerHTML={{ __html: msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
-             </motion.div>
-          ))}
-       </div>
     </div>
   );
 }
