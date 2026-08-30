@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${syne.variable} h-full antialiased dark`}
+      className={`${inter.variable} ${syne.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col selection:bg-accent/20 selection:text-accent font-sans bg-main">
+      <body className="min-h-full flex flex-col selection:bg-[#0A0D12] selection:text-[#F6F8FA] font-sans bg-[#F6F8FA] text-[#0A0D12]">
         <GrainOverlay />
         {children}
       </body>

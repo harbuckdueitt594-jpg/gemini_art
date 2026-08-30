@@ -6,8 +6,9 @@ import { useState } from "react";
 
 const categories = [
   { id: "smm-brand", title: "SMM & BRAND IDENTITY" },
-  { id: "neuro", title: "NEURO-CINEMATIC" },
-  { id: "ecommerce", title: "E-COMMERCE & PRINT" },
+  { id: "beauty-fx", title: "MAKE-UP & BEAUTY FX" },
+  { id: "neuro", title: "NEURO-CINEMATICS" },
+  { id: "posters", title: "POSTER DESIGN" },
   { id: "vibe", title: "VIBE-CODING & FAST WEB" },
   { id: "ai", title: "AI ARCHITECTURE & AGENTS" },
 ];
@@ -23,14 +24,16 @@ export default function CategoryIndex() {
   };
 
   return (
-    <section className="relative w-full py-32 px-8 bg-[#EAECEE] text-[#1A1D20] min-h-screen flex items-center">
+    <section className="relative w-full py-24 md:py-32 px-6 md:px-12 bg-[#F6F8FA] border-b border-[#E2E7ED] min-h-[80vh] flex flex-col justify-center">
       {/* Corner Tags */}
-      <div className="absolute top-8 left-8 text-xs font-mono tracking-widest text-[#8C9298]">CONTENT</div>
-      <div className="absolute top-8 right-8 text-xs font-mono tracking-widest text-[#8C9298]">AI</div>
-      <div className="absolute bottom-8 left-8 text-xs font-mono tracking-widest text-[#8C9298]">FIGMA</div>
-      <div className="absolute bottom-8 right-8 text-xs font-mono tracking-widest text-[#8C9298]">CHERNIKOV32DESIGN</div>
+      <div className="absolute top-8 left-8 text-xs font-mono tracking-widest text-[#94A3B8] uppercase">
+        03 // CONTENT ARCHIVE
+      </div>
+      <div className="absolute top-8 right-8 text-xs font-mono tracking-widest text-[#94A3B8] uppercase">
+        SWISS MODULAR INDEX
+      </div>
 
-      <div className="max-w-7xl mx-auto w-full flex flex-col gap-6">
+      <div className="max-w-6xl mx-auto w-full flex flex-col divide-y divide-[#E2E7ED]">
         {categories.map((cat, idx) => {
           const isHovered = hoveredIndex === idx;
           const isFaded = hoveredIndex !== null && hoveredIndex !== idx;
@@ -38,29 +41,43 @@ export default function CategoryIndex() {
           return (
             <motion.div
               key={cat.id}
-              className="group flex items-center justify-between py-6 cursor-pointer"
+              className="group flex items-center justify-between py-6 md:py-8 cursor-pointer select-none"
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => scrollToSection(cat.id)}
               animate={{
-                opacity: isFaded ? 0.3 : 1
+                opacity: isFaded ? 0.35 : 1,
               }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             >
-              <h3 className={`font-display text-6xl font-bold tracking-tighter transition-all duration-500 uppercase ${isHovered ? 'text-[#1A1D20] scale-105 translate-x-4' : 'text-[#8C9298]'}`}>
-                {cat.title}
-              </h3>
+              <div className="flex items-baseline gap-6">
+                <span className="font-mono text-sm text-[#94A3B8]">0{idx + 1}</span>
+                <h3
+                  className={`font-display text-2xl sm:text-4xl md:text-6xl font-bold tracking-tighter transition-all duration-300 uppercase ${
+                    isHovered ? "text-[#0A0D12] translate-x-3" : "text-[#475569]"
+                  }`}
+                >
+                  {cat.title}
+                </h3>
+              </div>
 
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -20 }}
-                className="text-accent"
+                initial={{ opacity: 0, x: -15 }}
+                animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -15 }}
+                className="text-[#0A0D12]"
               >
-                <ArrowUpRight size={48} strokeWidth={1.5} color="#1A1D20" />
+                <ArrowUpRight size={40} strokeWidth={1.5} />
               </motion.div>
             </motion.div>
           );
         })}
+      </div>
+
+      <div className="absolute bottom-8 left-8 text-xs font-mono tracking-widest text-[#94A3B8] uppercase">
+        STRICTLY HIGH-END
+      </div>
+      <div className="absolute bottom-8 right-8 text-xs font-mono tracking-widest text-[#94A3B8] uppercase">
+        © 2026 OLEG CHERNIKOV
       </div>
     </section>
   );
